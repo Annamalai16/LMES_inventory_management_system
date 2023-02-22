@@ -1,0 +1,141 @@
+
+:root {
+    --primaryColor: #f1f1f1;
+    --black: #222;
+    --black2: #555;
+    --black3: #252525;
+    --black4: #000;
+    --black5: #212529;
+    --orange: #eb0028;
+    --white: #fff;
+    --grey: #959595;
+    --grey2: #666;
+    --grey3: #ccc;
+    --secondaryColor: #2b1f4d;
+    --yellow: #ffcc00;
+    --green: #59b210;
+    --blue: rgb(56, 10, 223);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body,
+  input {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "Archivo", sans-serif;
+    color: var(--black);
+  }
+  
+ 
+  /*
+  ======================
+  Cart Area
+  ======================
+  */
+  .cart__area {
+    padding-bottom: 5rem;
+  }
+  
+  .cart__form {
+    display: block;
+  }
+  
+  .product__thumbnail img {
+    width: 10rem;
+    height: 15rem;
+    object-fit: contain;
+  }
+  
+  .remove__cart-item svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: var(--grey2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cart__table {
+    display: block;
+    width: 100%;
+    margin-bottom: 4rem;
+    overflow-x: hidden;
+  }
+  
+  .cart__table .table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 150rem;
+  }
+  
+  .cart__table .table th {
+    font-weight: 500;
+    font-style: 2rem;
+    text-align: left;
+    padding: 1.8rem 0;
+  }
+  
+  .cart__table .table td {
+    vertical-align: middle;
+    padding: 1.8rem 0;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--primaryColor);
+  }
+  
+  .cart__table .table thead {
+    border-bottom: 1px solid var(--primaryColor);
+  }
+  
+  .product__name a:link,
+  .product__name a:visited {
+    font-size: 1.5rem;
+    color: var(--black2);
+  }
+  
+  .product__name small {
+    color: var(--grey);
+    margin-top: 1.6rem;
+  }
+  
+  .product__subtotal .price {
+    display: inline;
+  }
+  
+  .product__subtotal .price .new__price,
+  .product__price .price .new__price {
+    font-size: 1.6rem;
+  }
+
+  
+  /*
+  ======================
+  Cart Area Media Query
+  ======================
+  */
+  
+  @media only screen and (max-width: 1200px) {
+    .minus-btn,
+    .plus-btn {
+      padding: 0.6rem 0.8rem;
+      margin-right: 0;
+    }
+  
+    .counter-btn {
+      width: 4rem;
+      padding: 1rem 0;
+    }
+  
+    .input-counter svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }

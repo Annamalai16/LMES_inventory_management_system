@@ -1,0 +1,146 @@
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Pinnacle-Store</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img//apple-touch-icon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/bulk-booking.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <h1 class="logo"><a href="index.html">Pinnacle</a></h1>
+        
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="colleges.html">HOME</a></li>
+                <li><a class="nav-link scrollto" href="index.html">LOGOUT</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
+    </div>
+</header>
+<br>
+<br>
+<br>
+<!-- End Header -->
+<section id="grid-pattern-copy" class="grid-container" style="display: none;">
+  <select class="inp">
+    <option value="" disabled selected hidden>College</option>
+    <option>Sri Sairam Engineering College</option>
+    <option>Sri Sairam Institute of Technology</option>
+    <option>Sri Sairam Medical College</option>
+  </select>
+  <select class="inp">
+    <option value="" disabled selected hidden>Department</option>
+    <option>Computer Science</option>
+    <option>Information Technology</option>
+    <option>Electronics and Communication</option>
+    <option>Electronics and Electrical</option>
+    <option>Mechanical</option>
+    <option>Civil</option>
+  </select>
+  <input type="text" placeholder="Name" class="inp">
+  <p style="text-align: center;" id="qrValue"><button type="button" onclick="openQRScanner()" style="width: 100%;" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-qrcode"> QR Code</i></button></p>
+  <input type="text" placeholder="Device" class="inp">
+  <input type="text" placeholder="Lab Name" class="inp">
+  <input type="text" placeholder="Location" class="inp">
+  <input type="text" placeholder="Description" class="inp">
+</section>
+
+<div id="input-row">
+  <section id="grid-pattern" class="grid-container">
+    <select class="inp">
+      <option value="" disabled selected hidden>College</option>
+      <option>Sri Sairam Engineering College</option>
+      <option>Sri Sairam Institute of Technology</option>
+      <option>Sri Sairam Medical College</option>
+    </select>
+    <select class="inp">
+      <option value="" disabled selected hidden>Department</option>
+      <option>Computer Science</option>
+      <option>Information Technology</option>
+      <option>Electronics and Communication</option>
+      <option>Electronics and Electrical</option>
+      <option>Mechanical</option>
+      <option>Civil</option>
+    </select>
+    <input type="text" placeholder="Name" class="inp">
+    <p style="text-align: center;" id="qrValue"><button type="button" onclick="openQRScanner()" style="width: 100%;" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-qrcode"> QR Code</i></button></p>
+    <input type="text" placeholder="Device" class="inp">
+    <input type="text" placeholder="Lab Name" class="inp">
+    <input type="text" placeholder="Location" class="inp">
+    <input type="text" placeholder="Description" class="inp">
+  </section>
+</div>
+<br>
+<div>
+  <button id="newsectionbtn" style="display: inline;float: left;" class="btn btn-outline-secondary">New Row</button>
+  <button type="button" style="display: inline;float: right;" class="btn btn-outline-success">ADD</button>
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">QR Reader</h5>
+            <button type="button" style="color: red; background-color: transparent; border: none; font-size: 150%;" class="close" data-dismiss="modal" aria-label="Close" onclick="videoOff()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p id="scannedValue" style="display: none;text-align: center;"></p>
+            <video id="preview" style="height: 70%; width: 90%; display: block; margin-left: auto; margin-right: auto;"></video>
+        </div>
+        <div class="modal-footer" id="popUpFooter" style="display: none;">
+          <button type="button" onclick="assignQR()" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/qrScanner.js"></script>
+
+  <a href="# " class="back-to-top d-flex align-items-center justify-content-center "><i class="bi bi-arrow-up-short "></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js "></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js "></script>
+    <script src="assets/vendor/php-email-form/validate.js "></script>
+    <script src="assets/vendor/purecounter/purecounter.js "></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js "></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js "></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
